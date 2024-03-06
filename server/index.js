@@ -23,7 +23,7 @@ app.use(cors());
 
 const port = process.env.PORT || process.env.MY_PORT;
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGO_URI, { family: 4 })
   .then(() => {
     app.listen(port, () => {
       console.log(
